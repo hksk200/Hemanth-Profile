@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Hemanth Kumar S | SAP Solutions Architect & AI Enabler</title>
+    <meta name="description" content="SAP PP/QM Functional Consultant with 4.5+ years of experience in discrete manufacturing, S/4HANA migrations, and AI automation.">
+    <meta property="og:title" content="Hemanth Kumar S | SAP Solutions Architect">
+    <meta property="og:description" content="Explore my portfolio: SAP PP/QM, S/4HANA migrations, and AI-powered workflows.">
+    <meta property="og:image" content="SLR_5842%20(1).jpg">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --accent-hot: #ff0844;
+            --accent-warm: #ffb199;
+            --neon-purple: #c471ed;
+            --neon-pink: #f64f59;
+            --glass: rgba(255, 255, 255, 0.07);
+            --text-light: #f0f4f8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: linear-gradient(135deg, #090910, #1a1a2e, #16213e);
+            color: var(--text-light);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 18, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+            z-index: 1000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+        }
+
+        /* --- Colorful Text Animations --- */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .text-gradient {
+            background: linear-gradient(270deg, var(--primary), var(--neon-purple), var(--neon-pink), var(--accent-hot));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 6s ease infinite;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+        }
+
+        /* --- Intro Animation --- */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: #090910;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .floating-msg {
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            letter-spacing: 2px;
+            animation: floatFade 3.5s ease-in-out forwards;
+        }
+
+        @keyframes floatFade {
+            0% { opacity: 0; transform: translateY(30px) scale(0.9); }
+            40% { opacity: 1; transform: translateY(0px) scale(1); filter: drop-shadow(0 0 15px rgba(196,113,237,0.5)); }
+            80% { opacity: 1; transform: translateY(0px) scale(1); filter: drop-shadow(0 0 30px rgba(0,242,254,0.8)); }
+            100% { opacity: 0; transform: translateY(-30px) scale(1.1); }
+        }
+
+        /* --- Main Content --- */
+        #main-content { opacity: 0; display: none; padding: 100px 20px 20px 20px; max-width: 1200px; margin: 0 auto; }
+
+        section {
+            margin-bottom: 80px;
+            padding: 50px;
+            border-radius: 30px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+            scroll-margin-top: 100px; 
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 60%);
+            z-index: -1;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            font-weight: 300;
+            color: #d1d8e0;
+        }
+
+        /* --- Section: Who Am I --- */
+        .hero { display: flex; align-items: center; justify-content: space-between; gap: 50px; flex-wrap: wrap; border-top: 2px solid var(--primary); }
+        .hero-text { flex: 1 1 500px; min-width: 300px; }
+        
+        .hero-text h1 { 
+            font-size: 4.5rem; 
+            font-weight: 900; 
+            margin-bottom: 10px; 
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+        
+        .hero-text h3 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--secondary);
+            margin-bottom: 25px;
+        }
+
+        /* --- SAP Certification Highlight --- */
+        .cert-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 177, 153, 0.1);
+            border: 1px solid var(--accent-warm);
+            padding: 10px 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(255, 177, 153, 0.2);
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .cert-highlight:hover {
+            transform: scale(1.02);
+            background: rgba(255, 177, 153, 0.2);
+        }
+
+        .cert-highlight i { font-size: 2rem; color: #f6ca65; }
+        .cert-details { display: flex; flex-direction: column; }
+        .cert-details strong { font-size: 1.1rem; color: var(--accent-warm); }
+        .cert-details small { font-size: 0.8rem; opacity: 0.8; }
+
+        /* --- Hero Visuals & Contact Info (Right Side) --- */
+        .hero-visuals {
+            flex: 0 1 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* Profile Picture Styling */
+        .profile-pic-wrapper {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            padding: 6px;
+            background: linear-gradient(135deg, var(--primary), var(--neon-purple), var(--accent-hot));
+            box-shadow: 0 15px 35px rgba(0, 242, 254, 0.4);
+            position: relative;
+            transition: transform 0.4s ease;
+        }
+
+        .profile-pic-wrapper:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 25px 45px rgba(196, 113, 237, 0.6);
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #090910; 
+        }
+
+        .hero-contact {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            width: 100%;
+            box-shadow: inset 0 0 20px rgba(0, 242, 254, 0.05), 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hero-contact a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #d1d8e0;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .hero-contact a i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            background: rgba(0, 242, 254, 0.1);
+            padding: 12px;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .hero-contact a:hover { color: white; transform: translateX(8px); }
+        .hero-contact a:hover i { background: var(--primary); color: #090910; box-shadow: 0 0 15px var(--primary); }
+
+        .hero-contact .resume-view-btn {
+            margin-top: 10px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .hero-contact .resume-view-btn i {
+            background: linear-gradient(135deg, var(--neon-purple), var(--primary));
+            color: white;
+            box-shadow: 0 0 10px rgba(196, 113, 237, 0.5);
+        }
+
+        /* --- Section: Achievements --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .card {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 35px;
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+        }
+        
+        .card:hover { 
+            border-color: var(--neon-purple); 
+            transform: translateY(-15px); 
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 15px 30px rgba(196, 113, 237, 0.2);
+        }
+        
+        .card i { 
+            font-size: 3rem; 
+            background: linear-gradient(135deg, var(--primary), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px; 
+            display: inline-block;
+        }
+
+        .card h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 15px; color: #fff; }
+
+        /* --- Tech Stack & Skills Tag Grid --- */
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+        .skill-tag {
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid var(--primary);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+            transition: 0.3s;
+        }
+        .skill-tag:hover { background: var(--primary); color: #090910; transform: scale(1.05); box-shadow: 0 0 20px var(--primary); }
+
+        /* --- Interactive Accordions (Projects/Modules) --- */
+        details {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        details[open] { border-color: var(--neon-purple); box-shadow: 0 0 15px rgba(196, 113, 237, 0.2); }
+        summary {
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        summary::-webkit-details-marker { display: none; } 
+        summary::after {
+            content: '\f067';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary);
+            transition: 0.3s;
+        }
+        details[open] summary::after { content: '\f068'; color: var(--neon-purple); transform: rotate(180deg); }
+
+        .details-content { padding: 0 20px 20px 20px; border-top: 1px solid rgba(255,255,255,0.05); color: #d1d8e0; }
+        .details-content ul { padding-left: 20px; margin-top: 10px; }
+        .details-content li { margin-bottom: 8px; line-height: 1.6; }
+
+        /* --- Value Section --- */
+        .value-box { 
+            border-left: 5px solid transparent; 
+            border-image: linear-gradient(to bottom, var(--neon-pink), var(--accent-hot)) 1;
+            padding-left: 25px; 
+            margin-top: 20px; 
+            transition: 0.3s;
+        }
+        .value-box:hover { transform: translateX(10px); }
+        .value-box h3 { font-size: 1.6rem; color: var(--accent-warm); margin-bottom: 10px; }
+
+        .highlight { color: #fff; font-weight: 600; border-bottom: 2px solid var(--neon-purple); }
+        .highlight-ai { color: var(--primary); font-weight: 800; text-shadow: 0 0 10px rgba(0, 242, 254, 0.5); }
+
+        /* --- Footer/CTA --- */
+        .cta-bar {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 10, 18, 0.85);
+            padding: 15px 40px;
+            border-radius: 50px;
+            display: flex;
+            gap: 25px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(0, 242, 254, 0.2);
+            z-index: 100;
+        }
+        
+        .cta-bar a { color: var(--text-light); text-decoration: none; font-size: 1.4rem; transition: all 0.3s ease; display: flex; justify-content: center; align-items: center; }
+        .cta-bar a:hover { color: var(--primary); transform: scale(1.3) translateY(-5px); filter: drop-shadow(0 0 8px var(--primary)); }
+        .divider { width: 1px; height: 30px; background: rgba(255, 255, 255, 0.2); margin: auto 5px; }
+
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; align-items: center; }
+            .hero-text { text-align: center; }
+            .hero-visuals { width: 100%; min-width: auto; }
+            nav { display: none; } 
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 3rem; }
+            h2 { font-size: 2.2rem; }
+            section { padding: 30px; border-radius: 20px; }
+            .cta-bar { width: 95%; justify-content: space-around; padding: 15px 20px; gap: 15px; }
+            .divider { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="floating-msg text-gradient">
+            Optimizing Digital Core...<br>
+            Injecting AI Logic.
+        </div>
+    </div>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills & Modules</a>
+        <a href="#value">Value Bring</a>
+        <a href="#why-me">Why Me</a>
+    </nav>
+
+    <div id="main-content">
+        <section id="about" class="hero">
+            <div class="hero-text">
+                <a href="https://www.credly.com/badges/8c6069a3-8095-4bea-9780-fcd3a3c26f20/public_url" target="_blank" class="cert-highlight">
+                    <i class="fas fa-award"></i>
+                    <div class="cert-details">
+                        <strong>SAP Certified Associate</strong>
+                        <small>S/4HANA Cloud Private Edition, PP & Mfg.</small>
+                    </div>
+                </a>
+                
+                <h1 class="text-gradient text-glow">Hemanth Kumar S</h1>
+                <h3>SAP PP/QM Functional Consultant</h3>
+                <p>I am a results-driven professional with <span class="highlight">4.5+ years of expertise</span> in discrete manufacturing. I bridge the gap between complex production requirements and seamless S/4HANA execution, supplemented by a powerful <span class="highlight-ai">add-on skill in next-generation AI automation</span>.</p>
+            </div>
+            
+            <div class="hero-visuals">
+                <div class="profile-pic-wrapper">
+                    <img src="SLR_5842%20(1).jpg" alt="Hemanth Kumar S" class="profile-pic">
+                </div>
+
+                <div class="hero-contact">
+                    <a href="mailto:hemanthshivkumar@gmail.com"><i class="fas fa-envelope"></i> hemanthshivkumar@gmail.com</a>
+                    <a href="tel:+917815876703"><i class="fas fa-phone-alt"></i> +91 7815876703</a>
+                    <a href="https://www.linkedin.com/in/hemanth-kumar-s-099362171/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn Profile</a>
+                    <a href="https://drive.google.com/file/d/10-y5W6y0-ZmZMQT-XqI5b59dmnhANcqX/view?usp=drive_link" target="_blank" class="resume-view-btn">
+                        <i class="fas fa-external-link-alt"></i> View Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="text-gradient">What I've Done So Far</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Big Four SAP Migration</h3>
+                    <p>Currently spearheading an SAP ECC to S/4HANA migration at a <span class="highlight">Big Four firm (EY)</span> for a global Semiconductor client, configuring <span class="highlight">20 plants</span> and delivering <span class="highlight">20+ Functional Specification Documents</span> (RICEF) for critical enhancements.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Accenture Experience</h3>
+                    <p>Provided dedicated functional support for a leading Industrial Equipment client during my tenure at <span class="highlight">Accenture</span>, ensuring seamless operations by efficiently handling <span class="highlight">Service Requests, Change Requests, and Incidents</span> to resolve complex production issues.</p>
+                </div>
+                <div class="card" style="border: 1px solid rgba(0, 242, 254, 0.4); box-shadow: inset 0 0 20px rgba(0, 242, 254, 0.05);">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>AI & Vibe Coding Add-on</h3>
+                    <p>As a key value-add, I actively practice <span class="highlight-ai">vibe coding</span>—leveraging LLMs to rapidly prototype and build Python-based tools. By embedding AI into daily workflows, I drastically reduce manual effort and unlock massive efficiency.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="text-gradient">Tech Stack & Modules Handled</h2>
+            
+            <div class="skills-grid">
+                <span class="skill-tag">SAP PP/QM</span>
+                <span class="skill-tag">SAP S/4HANA Cloud</span>
+                <span class="skill-tag">ABAP Debugging</span>
+                <span class="skill-tag">Generative AI</span>
+                <span class="skill-tag">Python Scripting</span>
+                <span class="skill-tag">SAP Activate Methodology</span>
+                <span class="skill-tag">RICEF Setup</span>
+                <span class="skill-tag">Integration: MM, SD, EWM, FICO</span>
+            </div>
+
+            <details>
+                <summary>SAP PP (Production Planning) Configuration Scope</summary>
+                <div class="details-content">
+                    <p>Expertise in configuring the entire discrete manufacturing lifecycle from planning to execution:</p>
+                    <ul>
+                        <li><strong>Master Data:</strong> Bill of Materials (BOM), Work Centers/Resources, Routings/Recipes, Production Versions.</li>
+                        <li><strong>Planning:</strong> Material Requirement Planning (MRP) Types, Demand Management, Planning Strategies.</li>
+                        <li><strong>Execution:</strong> Production Order Execution, Order Confirmation, Goods Issue/Receipt, and Backflushing.</li>
+                        <li><strong>Procurement Methods:</strong> Strong knowledge of STO and Subcontracting methodologies.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>SAP QM (Quality Management) Scope</summary>
+                <div class="details-content">
+                    <p>Ensuring robust product quality through integrated inspection architectures:</p>
+                    <ul>
+                        <li><strong>Quality in Production:</strong> Seamless integration with shop floor execution.</li>
+                        <li><strong>Inspection Data:</strong> Inspection Plans, Master Inspection Characteristics.</li>
+                        <li><strong>Standardization:</strong> Catalogues and Code Groups configuration.</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+        <section id="value">
+            <h2 class="text-gradient">The Value I Bring</h2>
+            <div class="grid">
+                <div class="value-box">
+                    <h3>Technical Mastery</h3>
+                    <p>Expert integration of SAP PP with QM, MM, SD, and EWM to create a unified, intelligent digital supply chain.</p>
+                </div>
+                <div class="value-box">
+                    <h3>Strategic Troubleshooting</h3>
+                    <p>Advanced ABAP debugging skills to identify bottlenecks and ensure robust system performance across the landscape.</p>
+                </div>
+                <div class="value-box">
+                    <h3 class="highlight-ai">Future-Proofing with AI</h3>
+                    <p>As a powerful extension of my SAP proficiency, I bring deep expertise in Generative AI integration. I leverage next-gen automation and SAP Activate Methodology to ensure your digital core isn't just upgraded—it's future-proofed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-me" style="background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(196,113,237,0.1)); border: 1px solid rgba(196,113,237,0.3);">
+            <h2 class="text-gradient text-glow">Why Choose Me?</h2>
+            <p style="font-size: 1.3rem;">I don't just configure systems; I optimize business outcomes. With a CGPA of <span class="highlight">8.51 in Electrical Engineering</span>, I bring deep domain expertise in niche industries such as <span class="highlight">Semiconductor/High-Tech and Industrial Equipment</span>. Combining experience at top-tier firms like <span class="highlight">Accenture and a Big Four organization (EY)</span> with a highly effective AI enablement add-on, I bring unparalleled analytical rigor and innovation to every project.</p>
+        </section>
+    </div>
+
+    <div class="cta-bar">
+        <a href="https://www.linkedin.com/in/hemanth-kumar-s-099362171/" target="_blank" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:hemanthshivkumar@gmail.com" title="Send Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+917815876703" title="Call Me"><i class="fas fa-phone-alt"></i></a>
+        
+        <div class="divider"></div>
+        
+        <a href="https://drive.google.com/file/d/10-y5W6y0-ZmZMQT-XqI5b59dmnhANcqX/view?usp=drive_link" target="_blank" title="View Resume in Drive"><i class="fas fa-eye"></i></a>
+        <a href="SAP_PPQM_Hemanth.pdf" download="Hemanth_Kumar_S_Resume.pdf" title="Download Resume"><i class="fas fa-cloud-download-alt"></i></a>
+    </div>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animation Logic
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                const main = document.getElementById('main-content');
+
+                gsap.to(loader, {
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        loader.style.display = 'none';
+                        main.style.display = 'block';
+                        gsap.to(main, { opacity: 1, duration: 1.5, y: 0, ease: "power3.out" });
+                        
+                        // Wait for loader to finish before triggering scroll animations
+                        initScrollAnimations();
+                    }
+                });
+            }, 3500);
+        });
+
+        // Scroll Reveal for sections
+        function initScrollAnimations() {
+            gsap.utils.toArray("section").forEach(section => {
+                gsap.from(section, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 85%", // Triggers when top of section hits 85% down viewport
+                    },
+                    y: 80,
+                    opacity: 0,
+                    duration: 1.2,
+                    ease: "back.out(1.7)"
+                });
+            });
+        }
+    </script>
+</body>
+</html>
